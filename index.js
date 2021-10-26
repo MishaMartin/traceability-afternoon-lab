@@ -20,10 +20,7 @@ app.get('/style', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/styles.css'))
 })
 
-try {
-    nonExistentFunction();
-  } catch (error) {
-    console.error(error);
+
 
 const port = process.env.PORT || 4545
 
