@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traceability</title>
+    <link rel="stylesheet" href="/style">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
     <h1>Traceability</h1>
+    <button id = "button">Click here for error</button>
+    <script>
+       let button = document.getElementById("button")
+       button.addEventListener('click', errorTest)
+       function errorTest(evt){
+           evt.preventDefault()
+           axios.get('/api/commands')
+           .then(response => {
+               console.log(res.data)
+           })
+       }
+    </script>
 </body>
 </html>

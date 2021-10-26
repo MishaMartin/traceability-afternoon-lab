@@ -20,10 +20,12 @@ app.get('/style', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/styles.css'))
 })
 
-app.get(() => {try {
-    nonExistentFunction(8+3);
+app.get('/api/commands', (req,res) => {try {
+    nonExistentFunction();
   } catch (error) {
-    console.error(error)}})
+    rollbar.error(error)}})
+
+    app.use(rollbar.errorHandler())
 
 const port = process.env.PORT || 4545
 
