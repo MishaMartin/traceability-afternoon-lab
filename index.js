@@ -21,7 +21,7 @@ app.get('/style', (req,res) => {
 })
 
 app.get(() => {try {
-    nonExistentFunction();
+    nonExistentFunction(8+3);
   } catch (error) {
     console.error(error)}})
 
